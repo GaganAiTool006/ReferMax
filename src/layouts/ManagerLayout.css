@@ -1,0 +1,140 @@
+.manager-container {
+  display: flex;
+  min-height: 100vh;
+  background: #09090c;
+  color: #ffffff;
+}
+
+/* Sidebar */
+.manager-sidebar {
+  width: var(--manager-sidebar-width);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.manager-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  padding: 0 10px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.manager-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.manager-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.manager-nav-link:hover {
+  background: var(--bg-tertiary);
+  color: #ffffff;
+}
+
+.manager-nav-link.active {
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.manager-sidebar-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.manager-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+}
+
+/* Main Area */
+.manager-main-content {
+  margin-left: var(--manager-sidebar-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.manager-topbar {
+  height: 70px;
+  background: rgba(18, 18, 22, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.manager-mobile-menu-btn {
+  display: none;
+}
+
+.manager-page-body {
+  padding: 32px;
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .manager-sidebar {
+    width: 220px;
+  }
+  .manager-main-content {
+    margin-left: 220px;
+  }
+  .manager-page-body {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-sidebar {
+    display: none;
+  }
+  .manager-mobile-menu-btn {
+    display: flex;
+  }
+  .manager-main-content {
+    margin-left: 0;
+  }
+  .manager-topbar {
+    padding: 0 16px;
+  }
+}
